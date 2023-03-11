@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SonoPasta</title>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="hero is-info">
+        <div class="hero-body">
+          <p class="title">
+            SonoPasta 🍝
+          </p>
+          <p class="subtitle">
+            Zueira effects for chaotic meetings
+          </p>
+        </div>
+      </section>
+      <section class="hero is-warning">
+        <div class="hero-body">
+          <p class="title">
+            Rodrigo Faro
+          </p>
+          <p class="subtitle">
+            <button class="button " id="rf_cavalo">Cavalo 🐴</button>
+            <button class="button " id="rf_ui">UUUUUII 😎</button>
+            <button class="button " id="rf_xi">XIIIIIIIII 🙄</button>
+            <button class="button " id="rf_ahuurr_ah_bhruah">AHUURR AH BHRUAH 🤠</button>
+            <button class="button " id="rf_vai_dar_namoro">Vai-Dar-Namoro! 💑</button>
+            <button class="button " id="rf_voce_e_mimada">Vc é mimada? 🫠</button>
+            <button class="button " id="rf_calma">Calma! 😶‍🌫️</button>
+
+        </p>
+        </div>
+      </section>
+      <section class="hero is-success">
+        <div class="hero-body">
+          <p class="title">
+            Ratinho
+          </p>
+          <p class="subtitle">
+            <button class="button " id="rt_pare">PARE! 🤚</button>
+            <button class="button " id="rt_uepa">UEEPA 🕺</button>
+
+        </p>
+        </div>
+      </section>
+      <section class="hero is-danger">
+        <div class="hero-body">
+          <p class="title">
+            Rei do Kuduro
+          </p>
+          <p class="subtitle">
+            <button class="button " id="rk_soraiya">SORAIYA 😁</button>
+            <button class="button " id="rk_independuentemuente">Independuentemuente 😀</button>
+        </p>
+        </div>
+      </section>
+      <section class="hero is-link">
+        <div class="hero-body">
+          <p class="title">
+            Outros...
+          </p>
+          <p class="subtitle">
+            <button class="button " id="atumalaca">ATUMALACA! 🤣</button>
+            <button class="button " id="ai_meu_cool">Ai meu cú 😳</button>
+            <button class="button " id="roncando">Roncando 🐮</button>
+            
+
+        </p>
+        </div>
+      </section>
+    <script>
+        const buttons = document.querySelectorAll("button");
+        let audios = [];
+        buttons.forEach((button, index) => {
+            console.debug('Loaded buttons total: ' + buttons.length);
+            audios[index] = new Audio("./assets/audio/" + button.id + ".mp3");
+            button.addEventListener("click", () => {
+                console.debug(button.innerText);
+                audios[index].pause();
+                audios[index].currentTime = 0
+                audios[index].play();
+            });
+        });
+        new Audio("./assets/audio/loader.mp3");
+    </script>
+</body>
+
+</html>
